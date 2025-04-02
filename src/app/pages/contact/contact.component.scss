@@ -1,0 +1,453 @@
+/* 🌟 Contact Page - Get in Touch & Contact Form */
+.contact-section {
+    background: #0d0d0d;
+    color: #fff;
+    padding: 80px 20px;
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 50px;
+    }
+  
+    /* Left Side */
+    .contact-info {
+      flex: 1;
+      text-align: left;
+  
+      h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+  
+      .contact-chat {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+  
+        img {
+          width: 24px;
+          height: auto;
+        }
+  
+        h4 {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+  
+        p, a {
+          font-size: 1rem;
+          color: #bbb;
+        }
+  
+        a {
+          text-decoration: none;
+          color: #a67cdb;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+  
+      .social-links {
+        margin-top: 40px;
+  
+        p {
+          font-size: 1.2rem;
+        }
+  
+        .social-icon img {
+          width: 30px;
+          margin-top: 10px;
+          transition: transform 0.3s ease;
+          
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  
+    /* Right Side - Contact Form */
+    .contact-form {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+  
+      h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+  
+      form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+  
+      .form-group {
+        display: flex;
+        flex-direction: column;
+  
+        label {
+          font-size: 1rem;
+          color: #bbb;
+          margin-bottom: 5px;
+        }
+  
+        input, select, textarea {
+          padding: 12px;
+          border: none;
+          background: rgba(255, 255, 255, 0.1);
+          color: #fff;
+          font-size: 1rem;
+          border-radius: 6px;
+  
+          &::placeholder {
+            color: #aaa;
+          }
+        }
+  
+        textarea {
+          resize: none;
+          height: 100px;
+        }
+      }
+  
+      .full-width {
+        grid-column: span 2;
+      }
+  
+      .submit-btn {
+        grid-column: span 2;
+        padding: 12px;
+        background: linear-gradient(90deg, #a67cdb, #6148b6);
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+  
+        &:hover {
+          background: linear-gradient(90deg, #6148b6, #a67cdb);
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+  
+  /* 📱 Responsive Design */
+  @media (max-width: 1024px) {
+    .contact-section .container {
+      flex-direction: column;
+    }
+  
+    .contact-form form {
+      grid-template-columns: 1fr;
+    }
+  
+    .full-width {
+      grid-column: span 1;
+    }
+  }
+  /* 🌟 Contact Page - Statistics & Highlights */
+.contact-highlights {
+    background: #0d0d0d;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .intro-text {
+      font-size: 1.2rem;
+      color: #bbb;
+      margin-bottom: 40px;
+    }
+  
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+  
+      .highlight-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s ease, background 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+          background: rgba(255, 255, 255, 0.1);
+        }
+  
+        h2 {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: #bbb;
+        }
+  
+        img {
+          width: 50px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  
+  /* 📱 Responsive Design */
+  @media (max-width: 1024px) {
+    .highlights-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+ 
+ // 🌟 Footer Styling
+.footer {
+    background: #0d0d0d; // Dark background
+    padding: 60px 30px;
+    color: white;
+  
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+  
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+  
+    // 🔹 Left Section - Company Info
+    .footer-left {
+        max-width: 350px;
+  
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+  
+        p {
+            font-size: 1.1rem;
+            color: #c0c0c0;
+            line-height: 1.6;
+        }
+  
+        h4 {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+    }
+  
+    // 🔹 Middle Section - Services & Solutions
+    .footer-middle {
+        text-align: left;
+  
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #a67cdb; // Purple accent
+        }
+  
+        ul {
+            list-style: none;
+            padding: 0;
+  
+            li {
+                margin-bottom: 8px;
+  
+                a {
+                    color: #c0c0c0;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+  
+                    &:hover {
+                        color: #ff9900;
+                    }
+                }
+            }
+        }
+    }
+  
+    // 🔹 Right Section - Company
+    .footer-right {
+        text-align: left;
+  
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #a67cdb;
+        }
+  
+        ul {
+            list-style: none;
+            padding: 0;
+  
+            li {
+                margin-bottom: 8px;
+  
+                a {
+                    color: #c0c0c0;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+  
+                    &:hover {
+                        color: #ff9900;
+                    }
+                }
+            }
+        }
+    }
+  
+    // 🌟 Bottom Copyright Section
+    .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
+        p {
+            font-size: 1rem;
+            color: #c0c0c0;
+        }
+    }
+  }
+  
+  // 📱 Responsive Adjustments
+  @media (max-width: 900px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+  
+    .footer-middle,
+    .footer-right {
+        margin-top: 30px;
+    }
+  }
+  /* 🌍 Map Section - Centered Video */
+.map-section {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh; /* Full viewport height */
+  background-color: #0d0d0d; /* Dark background for contrast */
+  padding: 50px 0; /* Spacing above and below */
+}
+
+/* 🔹 Video Container */
+.map-container {
+  width: 80%; /* Adjust width as needed */
+  max-width: 900px; /* Prevents video from getting too large */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🎥 Video Styling */
+.map-video {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); /* Soft shadow */
+  object-fit: cover; /* Ensures proper aspect ratio */
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .map-container {
+    width: 90%;
+  }
+}
+/* 🌟 Dropdown Styling */
+select {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.1); /* Keeps background slightly visible */
+  color: #fff; /* Ensures the text is visible */
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 🌟 Ensure the dropdown options are visible */
+select option {
+  background: #0d0d0d; /* Dark background for dropdown options */
+  color: #fff; /* White text for readability */
+  font-weight: 500;
+  padding: 10px;
+}
+
+/* 🌟 Fix Dropdown Arrow */
+select {
+  
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+}
+
+/* 🌟 Hover Effect */
+select:hover {
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.15);
+}
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
+
+  

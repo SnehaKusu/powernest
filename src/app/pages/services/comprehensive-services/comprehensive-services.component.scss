@@ -1,0 +1,398 @@
+// 🌟 Hero Section Styling
+.comprehensive-services-hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    height: 100vh;
+    padding: 0 10%;
+    background: radial-gradient(circle at right, rgba(0, 0, 255, 0.3), #0d0d0d 70%);
+    color: white;
+    
+    .content {
+      max-width: 700px;
+      
+      .subheading {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #5271FF; // Blue Accent
+        margin-bottom: 10px;
+      }
+  
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        span {
+          color: #5271FF; // Blue for emphasis
+        }
+      }
+  
+      .description {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #c0c0c0;
+        margin: 20px 0;
+      }
+  
+      .cta-button {
+        padding: 14px 30px;
+        background: transparent;
+        color: white;
+        font-size: 1.2rem;
+        border: 2px solid white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        box-shadow: 0px 0px 12px rgba(82, 113, 255, 0.5);
+  
+        &:hover {
+          background: white;
+          color: #0d0d0d;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  /* 🌟 Section 2: Our Solutions */
+.comprehensive-services-solutions {
+  background: #0d0d0d;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 0 auto 40px;
+    color: #c0c0c0;
+  }
+
+  /* 🌟 Solutions Grid */
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* 🎯 Individual Solution Cards */
+  .solution-card {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 18px rgba(166, 124, 219, 0.3);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: #f0a6ff;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #c0c0c0;
+    }
+
+    /* 🎯 Solution Icon */
+    .solution-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 20px;
+
+      img {
+        width: 40px;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .comprehensive-services-solutions {
+    padding: 60px 15px;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .solutions-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+  }
+}
+// 🌟 Why Choose Us Section Styling
+.why-choose-us {
+  background: #0d0d0d;  // Dark background
+  padding: 80px 20px;
+  color: #fff; // White text
+  text-align: center;
+
+  .container {
+      max-width: 900px;
+      margin: 0 auto;
+  }
+
+  .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+  }
+
+  .benefit {
+      text-align: left;
+      margin-bottom: 20px;
+
+      h3 {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+      }
+
+      p {
+          font-size: 1rem;
+          color: #c0c0c0; // Grey text for contrast
+      }
+  }
+
+  .divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2); // Light divider line
+      margin: 20px 0;
+  }
+}
+
+// 📱 Responsive Adjustments
+@media (max-width: 768px) {
+  .why-choose-us {
+      padding: 60px 15px;
+
+      .section-title {
+          font-size: 2rem;
+      }
+
+      .benefit {
+          h3 {
+              font-size: 1.2rem;
+          }
+
+          p {
+              font-size: 0.9rem;
+          }
+      }
+  }
+}
+// 🌟 Transform Business Section Styling
+.transform-business {
+  background: #0d0d0d; // Dark background
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff; // White text
+
+  .container {
+      max-width: 1000px;
+      margin: 0 auto;
+  }
+
+  .section-title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+
+  .description {
+      font-size: 1.2rem;
+      color: #c0c0c0; // Subtext color
+      margin-bottom: 30px;
+  }
+
+  .cta-button {
+      background: #c054ff; // Purple button
+      color: #fff;
+      padding: 14px 35px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 6px 15px rgba(192, 84, 255, 0.4);
+
+      &:hover {
+          background: #a833e8; // Darker purple on hover
+          transform: scale(1.05);
+          box-shadow: 0px 8px 20px rgba(192, 84, 255, 0.6);
+      }
+  }
+}
+
+// 📱 Responsive Adjustments
+@media (max-width: 768px) {
+  .transform-business {
+      padding: 80px 15px;
+
+      .section-title {
+          font-size: 2.2rem;
+      }
+
+      .description {
+          font-size: 1rem;
+      }
+
+      .cta-button {
+          font-size: 1rem;
+          padding: 12px 30px;
+      }
+  }
+}
+// 🌟 Footer Styling
+.footer {
+  background: #0d0d0d; // Dark background
+  padding: 60px 30px;
+  color: white;
+
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+
+  .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+  // 🔹 Left Section - Company Info
+  .footer-left {
+      max-width: 350px;
+
+      h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 10px;
+      }
+
+      p {
+          font-size: 1.1rem;
+          color: #c0c0c0;
+          line-height: 1.6;
+      }
+
+      h4 {
+          margin-top: 20px;
+          font-size: 1.3rem;
+          font-weight: bold;
+      }
+  }
+
+  // 🔹 Middle Section - Services & Solutions
+  .footer-middle {
+      text-align: left;
+
+      h4 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 10px;
+          color: #a67cdb; // Purple accent
+      }
+
+      ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+              margin-bottom: 8px;
+
+              a {
+                  color: #c0c0c0;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+
+                  &:hover {
+                      color: #ff9900;
+                  }
+              }
+          }
+      }
+  }
+
+  // 🔹 Right Section - Company
+  .footer-right {
+      text-align: left;
+
+      h4 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 10px;
+          color: #a67cdb;
+      }
+
+      ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+              margin-bottom: 8px;
+
+              a {
+                  color: #c0c0c0;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+
+                  &:hover {
+                      color: #ff9900;
+                  }
+              }
+          }
+      }
+  }
+
+  // 🌟 Bottom Copyright Section
+  .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      p {
+          font-size: 1rem;
+          color: #c0c0c0;
+      }
+  }
+}
+
+// 📱 Responsive Adjustments
+@media (max-width: 900px) {
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-middle,
+  .footer-right {
+      margin-top: 30px;
+  }
+}

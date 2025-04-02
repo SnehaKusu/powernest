@@ -1,1 +1,107 @@
-/* You can add global styles to this file, and also import other style files */
+/* ================ 🌟 GLOBAL RESET ================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================ 📱 MOBILE-FIRST BASE ================ */
+:root {
+  --bg-color: #0d0d0d;
+  --text-color: #ffffff;
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font: 'Roboto', sans-serif;
+  
+  /* Responsive spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+}
+
+html {
+  font-size: 14px; /* Base for mobile */
+  scroll-behavior: smooth;
+  text-size-adjust: 100%; /* Prevent font scaling in landscape */
+}
+
+body {
+  font-family: var(--primary-font);
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  
+  /* Font smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================ 🖥️ RESPONSIVE TYPOGRAPHY ================ */
+@media (min-width: 600px) {
+  html { font-size: 15px; }
+}
+
+@media (min-width: 900px) {
+  html { font-size: 16px; }
+}
+
+/* ================ 🏗️ LAYOUT UTILITIES ================ */
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ================ 🔥 RESPONSIVE GRID ================ */
+.grid {
+  display: grid;
+  gap: var(--space-md);
+  
+  &--2cols {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  &--3cols {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* ================ 📱 MEDIA QUERIES ================ */
+@media (max-width: 599px) {
+  .mobile\:hidden { display: none !important; }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .tablet\:hidden { display: none !important; }
+}
+
+@media (min-width: 900px) {
+  .desktop\:hidden { display: none !important; }
+}
+
+/* ================ 🖼️ RESPONSIVE MEDIA ================ */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================ 🛠️ UTILITY CLASSES ================ */
+.text-center { text-align: center; }
+.no-scroll { overflow: hidden; }

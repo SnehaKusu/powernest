@@ -1,0 +1,72 @@
+<header class="navbar">
+  <div class="nav-container">
+    <!-- Logo (Left) -->
+    <div class="nav-logo">
+      <img src="../assets/icons/logo.svg" alt="Power Nest Logo">
+      <span>Power Nest</span>
+    </div>
+
+    <!-- Navigation Links (Center) -->
+    <nav class="nav-links">
+      <ul>
+        <!-- Home Button -->
+        <li><a routerLink="/">Home</a></li>
+
+        <!-- Solutions Dropdown -->
+        <li class="dropdown-container" (click)="toggleDropdown('solutions', $event)">
+          <a href="javascript:void(0)">Solutions</a>
+          <div class="dropdown-menu" [class.active]="activeDropdown === 'solutions'">
+            <ul>
+              <li (click)="navigateTo('/solutions/business-development', $event)">Business Development Solutions</li>
+              <li (click)="navigateTo('/solutions/core-hr', $event)">Core HR Solutions</li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Services Dropdown -->
+        <li class="dropdown-container" (click)="toggleDropdown('services', $event)">
+          <a href="javascript:void(0)">Services</a>
+          <div class="dropdown-menu" [class.active]="activeDropdown === 'services'">
+            <ul>
+              <li (click)="navigateTo('/services/comprehensive-services', $event)">Comprehensive Services</li>
+              <li (click)="navigateTo('/services/strategic-advisory', $event)">Strategic Advisory Services</li>
+              <li (click)="navigateTo('/services/psychological-services', $event)">Psychological Services</li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Resources Dropdown -->
+        <li class="dropdown-container" (click)="toggleDropdown('resources', $event)">
+          <a href="javascript:void(0)">Resources</a>
+          <div class="dropdown-menu" [class.active]="activeDropdown === 'resources'">
+            <ul>
+              <li (click)="navigateTo('/resources/fundraising-services', $event)">Fundraising Services</li>
+              <li (click)="navigateTo('/resources/talent-optimization-services', $event)">Talent Optimization Services</li>
+              <li (click)="navigateTo('/newsletter', $event)">Newsletter</li>
+              <li (click)="navigateTo('/support', $event)">Support</li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Company Dropdown -->
+        <li class="dropdown-container" (click)="toggleDropdown('company', $event)">
+          <a href="javascript:void(0)">Company</a>
+          <div class="dropdown-menu" [class.active]="activeDropdown === 'company'">
+            <ul>
+              <li (click)="navigateTo('/about-us', $event)">About Us</li>
+              <li (click)="navigateTo('/careers', $event)">Careers</li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Contact Page -->
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Call to Action Button (Right) -->
+    <div class="nav-cta">
+      <button class="nav-cta-button"(click)="navigateTo('/contact', $event)">Book a Call</button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,181 @@
+// 🎯 Talent Hero Section
+.talent-hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6rem 10%;
+    background: radial-gradient(circle at top right, #1e5c47, #09010f);
+    color: white;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  
+    .hero-content {
+      max-width: 800px;
+      
+      .subheading {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #a56ff5;
+        position: relative;
+        display: inline-block;
+      }
+  
+      h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-top: 15px;
+        background: linear-gradient(90deg, #ffffff, #b9b9b9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+  
+      .cta-button {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 14px 28px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        background: linear-gradient(90deg, #b847ff, #5c2cff);
+        color: white;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.4);
+  
+        &:hover {
+          background: linear-gradient(90deg, #5c2cff, #b847ff);
+          transform: scale(1.05);
+          box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.7);
+        }
+      }
+    }
+  
+    // 🎯 Subtle Animated Light Effect
+    &::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(30, 188, 146, 0.6), transparent);
+      top: -100px;
+      right: -100px;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: floatingGlow 5s infinite alternate ease-in-out;
+    }
+  }
+  
+  // ✨ Animation for Light Glow
+  @keyframes floatingGlow {
+    0% {
+      transform: scale(1) translateY(0);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.1) translateY(10px);
+      opacity: 0.7;
+    }
+  }
+  
+  // 🎯 Talent Services Section
+  .talent-services {
+    padding: 4rem 10%;
+    text-align: center;
+    background: #0a0216;
+    color: white;
+  
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+  
+    .subtext {
+      font-size: 1.2rem;
+      max-width: 750px;
+      margin: 0 auto 3rem auto;
+      color: #b3b3b3;
+    }
+  
+    .talent-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+  
+      .talent-item {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        max-width: 900px;
+        transition: transform 0.3s ease-in-out;
+  
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+        }
+  
+        .icon-box {
+          flex: 0 0 120px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 10px;
+          padding: 1rem;
+  
+          img {
+            width: 80px;
+            height: auto;
+          }
+        }
+  
+        .content-box {
+          flex: 1;
+          padding-left: 1.5rem;
+          text-align: left;
+  
+          h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+  
+          ul {
+            padding-left: 20px;
+            list-style: none;
+  
+            li {
+              font-size: 1rem;
+              color: #c3c3c3;
+              position: relative;
+              padding-left: 1.5rem;
+              margin-bottom: 8px;
+  
+              &::before {
+                content: "✔";
+                position: absolute;
+                left: 0;
+                color: #a56ff5;
+              }
+            }
+          }
+        }
+  
+        &.reverse {
+          flex-direction: row-reverse;
+          text-align: right;
+        }
+      }
+    }
+  }
+  

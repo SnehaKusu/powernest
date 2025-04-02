@@ -1,0 +1,439 @@
+// 🎨 Global Color Palette
+$primary-color: #a67cdb;   // Purple Accent
+$secondary-color: #ff9900; // Gold Accent
+$background-dark: #0d0d0d; // Dark Background
+$text-color: #ffffff;      // White Text
+$subtext-color: #c0c0c0;   // Grey Subtext
+$card-background: rgba(255, 255, 255, 0.07); // Soft Transparent Card Background
+$card-border: rgba(255, 255, 255, 0.15);
+$glow-color: rgba(166, 124, 219, 0.5);
+
+// General Styling for Consistency
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $background-dark;
+  color: $text-color;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: $text-color;
+}
+
+p {
+  color: $subtext-color;
+  font-size: 1.1rem;
+}
+
+/* 🌟 About Hero Section */
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 20px;
+  background: radial-gradient(circle at top, $glow-color, $background-dark 70%);
+  color: $text-color;
+  position: relative;
+  overflow: hidden;
+
+  .about-hero-content {
+    max-width: 50%;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+
+      span {
+        color: $primary-color; // Purple accent
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $subtext-color;
+      margin-bottom: 25px;
+    }
+  }
+
+  .about-hero-image {
+    img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+/* 🌟 Team Strength Section */
+.team-strength {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px;
+  background: $background-dark;
+
+  .team-strength-left {
+    h2 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: $text-color;
+    }
+  }
+
+  .team-strength-right {
+    max-width: 50%;
+
+    p {
+      font-size: 1.2rem;
+      color: $subtext-color;
+    }
+  }
+}
+
+/* 🌟 Team Grid Section */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 60px 20px;
+  background: $background-dark;
+
+  .team-card {
+    background: $card-background;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid $card-border;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba($secondary-color, 0.4);
+    }
+
+    .badge {
+      width: 40px;
+      height: 40px;
+      background: $primary-color;
+      color: $text-color;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: $text-color;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $subtext-color;
+    }
+  }
+}
+
+
+/* 🌟 Our Process Section */
+.our-process {
+  padding: 80px 20px;
+  background: $background-dark;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: $text-color;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    color: $subtext-color;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+
+    .process-step {
+      background: $card-background;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid $card-border;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba($secondary-color, 0.4);
+      }
+
+      .step-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $primary-color;
+        margin-bottom: 10px;
+      }
+
+      .step-title {
+        font-size: 1.5rem;
+        color: $text-color;
+        margin-bottom: 10px;
+      }
+
+      .step-details {
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            font-size: 1rem;
+            color: $subtext-color;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+
+            &::before {
+              content: "•";
+              color: $primary-color;
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 🌟 Key Metrics Section */
+.key-metrics {
+  padding: 80px 20px;
+  background: $background-dark;
+
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    color: $subtext-color;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+
+    .metric-card {
+      text-align: center;
+      padding: 20px;
+      background: $card-background;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid $card-border;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba($secondary-color, 0.4);
+      }
+
+      .metric-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $primary-color;
+        margin-bottom: 10px;
+      }
+
+      .metric-title {
+        font-size: 1.2rem;
+        color: $text-color;
+      }
+
+      .metric-icon {
+        width: 50px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+/* 🌟 Strategic Partnerships Section */
+.strategic-partnerships {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 20px;
+  background: $background-dark;
+
+  .partnership-text {
+    max-width: 50%;
+
+    h2 {
+      font-size: 2.5rem;
+      color: $text-color;
+      margin-bottom: 20px;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $subtext-color;
+    }
+  }
+
+  .partnership-benefits {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-size: 1.1rem;
+        color: $subtext-color;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+          content: "•";
+          color: $primary-color;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+/* 🌟 CTA - Discuss with Our Team */
+.cta-section {
+    background-color: #f4a32a; /* 🔥 Warm Orange */
+    padding: 30px 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 80px auto;
+    color: #222; /* 🔥 Dark Contrast */
+  }
+  
+  /* 🔹 Left Side - Text */
+  .cta-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .cta-text p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #333;
+  }
+  
+  /* 🔹 Right Side - CTA Button */
+  .cta-button {
+    width: 60px;
+    height: 60px;
+    background-color: #5a0d78; /* 🔥 Deep Purple */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  }
+  
+  .cta-button:hover {
+    background-color: #470960; /* Darker Purple on Hover */
+    transform: scale(1.1);
+  }
+  
+  .cta-button i {
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  /* 🔥 Responsive */
+  @media (max-width: 768px) {
+    .cta-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px 30px;
+    }
+  
+    .cta-button {
+      margin-top: 15px;
+    }
+  }
+  
+
+/* 🌟 Footer Section */
+.footer {
+  background: $background-dark;
+  color: $text-color;
+  padding: 60px 20px;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .footer-left {
+      max-width: 300px;
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $subtext-color;
+      }
+    }
+
+    .footer-links {
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: $primary-color;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          font-size: 1rem;
+          color: $subtext-color;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: $subtext-color;
+  }
+}
