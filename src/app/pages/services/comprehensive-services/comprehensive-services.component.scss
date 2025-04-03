@@ -267,132 +267,49 @@
       }
   }
 }
-// 🌟 Footer Styling
-.footer {
-  background: #0d0d0d; // Dark background
-  padding: 60px 30px;
-  color: white;
-
-  .container {
-      max-width: 1200px;
-      margin: 0 auto;
-  }
-
-  .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-  }
-
-  // 🔹 Left Section - Company Info
-  .footer-left {
-      max-width: 350px;
-
-      h3 {
-          font-size: 1.8rem;
-          font-weight: 700;
-          margin-bottom: 10px;
-      }
-
-      p {
-          font-size: 1.1rem;
-          color: #c0c0c0;
-          line-height: 1.6;
-      }
-
-      h4 {
-          margin-top: 20px;
-          font-size: 1.3rem;
-          font-weight: bold;
-      }
-  }
-
-  // 🔹 Middle Section - Services & Solutions
-  .footer-middle {
-      text-align: left;
-
-      h4 {
-          font-size: 1.2rem;
-          font-weight: 600;
-          margin-bottom: 10px;
-          color: #a67cdb; // Purple accent
-      }
-
-      ul {
-          list-style: none;
-          padding: 0;
-
-          li {
-              margin-bottom: 8px;
-
-              a {
-                  color: #c0c0c0;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-
-                  &:hover {
-                      color: #ff9900;
-                  }
-              }
-          }
-      }
-  }
-
-  // 🔹 Right Section - Company
-  .footer-right {
-      text-align: left;
-
-      h4 {
-          font-size: 1.2rem;
-          font-weight: 600;
-          margin-bottom: 10px;
-          color: #a67cdb;
-      }
-
-      ul {
-          list-style: none;
-          padding: 0;
-
-          li {
-              margin-bottom: 8px;
-
-              a {
-                  color: #c0c0c0;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-
-                  &:hover {
-                      color: #ff9900;
-                  }
-              }
-          }
-      }
-  }
-
-  // 🌟 Bottom Copyright Section
-  .footer-bottom {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-      p {
-          font-size: 1rem;
-          color: #c0c0c0;
-      }
-  }
+/* 🌟 Hero Section - Mobile Centering */
+.comprehensive-services-hero {
+  text-align: center; /* Centers all text content */
+  padding: 2rem 1rem; /* Adjust padding as needed */
 }
 
-// 📱 Responsive Adjustments
-@media (max-width: 900px) {
-  .footer-content {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
+.comprehensive-services-hero .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers all child elements horizontally */
+  justify-content: center; /* Centers vertically if needed */
+  max-width: 100%; /* Ensures content doesn't overflow */
+}
 
-  .footer-middle,
-  .footer-right {
-      margin-top: 30px;
+/* If you have specific elements that need adjustment */
+.comprehensive-services-hero h1,
+.comprehensive-services-hero .subheading,
+.comprehensive-services-hero .description {
+  text-align: center; /* Ensures text alignment */
+  width: 100%; /* Takes full width for proper centering */
+}
+
+.comprehensive-services-hero .cta-button {
+  margin: 0 auto; /* Centers the button */
+}
+
+/* Desktop styles (if you need to override for larger screens) */
+@media (min-width: 768px) {
+  .comprehensive-services-hero {
+      text-align: left; /* Revert to left alignment on desktop if needed */
+  }
+  
+  .comprehensive-services-hero .content {
+      align-items: flex-start; /* Revert to left alignment on desktop */
+  }
+  
+  .comprehensive-services-hero h1,
+  .comprehensive-services-hero .subheading,
+  .comprehensive-services-hero .description {
+      text-align: left; /* Revert to left alignment on desktop */
+  }
+  
+  .comprehensive-services-hero .cta-button {
+      margin: 0; /* Revert button alignment on desktop */
   }
 }

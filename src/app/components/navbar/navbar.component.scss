@@ -359,3 +359,92 @@
     }
   }
 }
+/* ====================== */
+/* MOBILE NAVBAR OVERRIDES */
+/* ====================== */
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    padding: 0 15px;
+    position: relative; /* Fix for iOS viewport */
+
+    &::after {
+      animation: none; /* Disable animation on mobile */
+    }
+  }
+
+  .nav-container {
+    flex-wrap: nowrap;
+  }
+
+  .nav-logo {
+    img {
+      width: 32px !important;
+    }
+    span {
+      font-size: 1.1rem !important;
+    }
+  }
+
+  /* Mobile menu button (add this HTML) */
+  .mobile-menu-btn {
+    display: block !important;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    margin-left: auto;
+  }
+
+  /* Mobile menu state */
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &.active {
+      max-height: calc(100vh - 60px);
+      padding: 1rem 0;
+    }
+
+    ul {
+      flex-direction: column;
+      gap: 0;
+
+      li {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem 1rem;
+
+        a {
+          justify-content: flex-start;
+          padding: 0.75rem 1rem !important;
+        }
+      }
+    }
+  }
+
+  /* Hide desktop CTA on mobile */
+  .nav-cta {
+    display: none;
+  }
+}
+/* Hide mobile menu button on desktop */
+@media (min-width: 992px) { /* or whatever breakpoint you use for desktop */
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Show mobile menu button on mobile */
+@media (max-width: 991px) { /* matching the same breakpoint */
+  .mobile-menu-btn {
+    display: block;
+  }
+}

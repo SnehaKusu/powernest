@@ -1,453 +1,520 @@
-/* 🌟 Contact Page - Get in Touch & Contact Form */
+/* 🌟 Contact Page Styles */
+$primary-color: #a67cdb;
+$secondary-color: #ff9900;
+$background-dark: #0d0d0d;
+$text-color: #fff;
+$subtext-color: #bbb;
+
+/* Base Styles */
 .contact-section {
-    background: #0d0d0d;
-    color: #fff;
-    padding: 80px 20px;
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      gap: 50px;
+  background: $background-dark;
+  color: $text-color;
+  padding: 80px 20px;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+  }
+}
+
+/* Contact Info Section */
+.contact-info {
+  flex: 1;
+  text-align: left;
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .contact-chat {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    img {
+      width: 24px;
+      height: auto;
     }
-  
-    /* Left Side */
-    .contact-info {
-      flex: 1;
-      text-align: left;
-  
-      h1 {
-        font-size: 2.8rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
-  
-      .contact-chat {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 20px;
-  
-        img {
-          width: 24px;
-          height: auto;
-        }
-  
-        h4 {
-          font-size: 1.2rem;
-          font-weight: 600;
-        }
-  
-        p, a {
-          font-size: 1rem;
-          color: #bbb;
-        }
-  
-        a {
-          text-decoration: none;
-          color: #a67cdb;
-          transition: color 0.3s ease;
-  
-          &:hover {
-            color: #fff;
-          }
-        }
-      }
-  
-      .social-links {
-        margin-top: 40px;
-  
-        p {
-          font-size: 1.2rem;
-        }
-  
-        .social-icon img {
-          width: 30px;
-          margin-top: 10px;
-          transition: transform 0.3s ease;
-          
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    p, a {
+      font-size: 1rem;
+      color: $subtext-color;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $text-color;
       }
     }
+  }
+
+  .social-links {
+    margin-top: 40px;
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .social-icon img {
+      width: 30px;
+      margin-top: 10px;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+/* Contact Form Section - Complete Fix */
+.contact-form {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  box-sizing: border-box;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: grid;
+    grid-template-areas:
+      "name1 name2"
+      "company job"
+      "country phone"
+      "email email"
+      "service service"
+      "help help"
+      "submit submit";
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* Explicit grid positioning */
+  .form-group:nth-child(1) { grid-area: name1; }
+  .form-group:nth-child(2) { grid-area: name2; }
+  .form-group:nth-child(3) { grid-area: company; }
+  .form-group:nth-child(4) { grid-area: job; }
+  .form-group:nth-child(5) { grid-area: country; }
+  .form-group:nth-child(6) { grid-area: phone; }
+  .form-group:nth-child(7) { grid-area: email; }
+  .form-group:nth-child(8) { grid-area: service; }
+  .form-group:nth-child(9) { grid-area: help; }
   
-    /* Right Side - Contact Form */
-    .contact-form {
-      flex: 1;
+  .submit-btn {
+    grid-area: submit;
+  }
+
+  /* Universal field styling */
+  .form-group {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 1rem;
+      color: $subtext-color;
+      margin-bottom: 8px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      color: $text-color;
+      font-size: 1rem;
+      border-radius: 6px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+
+  /* Submit button */
+  .submit-btn {
+    padding: 15px;
+    background: linear-gradient(90deg, $primary-color, #6148b6);
+    border: none;
+    color: $text-color;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(90deg, #6148b6, $primary-color);
+      transform: scale(1.02);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* Dropdown Styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  padding-right: 35px !important;
+}
+
+/* Messages */
+.success-message {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #d4edda;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  grid-column: span 2;
+}
+
+.error-message {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #f8d7da;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  grid-column: span 2;
+}
+
+/* Highlights Section */
+.contact-highlights {
+  background: $background-dark;
+  padding: 60px 20px;
+  text-align: center;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .intro-text {
+    font-size: 1.2rem;
+    color: $subtext-color;
+    margin-bottom: 40px;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    .highlight-card {
       background: rgba(255, 255, 255, 0.05);
       padding: 30px;
       border-radius: 12px;
-  
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
       h2 {
-        font-size: 1.8rem;
-        font-weight: 600;
-        margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
       }
-  
-      form {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+
+      p {
+        font-size: 1rem;
+        color: $subtext-color;
       }
-  
-      .form-group {
-        display: flex;
-        flex-direction: column;
-  
-        label {
-          font-size: 1rem;
-          color: #bbb;
-          margin-bottom: 5px;
-        }
-  
-        input, select, textarea {
-          padding: 12px;
-          border: none;
-          background: rgba(255, 255, 255, 0.1);
-          color: #fff;
-          font-size: 1rem;
-          border-radius: 6px;
-  
-          &::placeholder {
-            color: #aaa;
+
+      img {
+        width: 50px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+/* Map Section */
+.map-section {
+  background: $background-dark;
+  padding: 60px 20px;
+  text-align: center;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .map-video {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    margin-top: 30px;
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background: $background-dark;
+  padding: 60px 30px;
+  color: $text-color;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    max-width: 350px;
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: $subtext-color;
+      line-height: 1.6;
+    }
+
+    h4 {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+  }
+
+  .footer-middle, .footer-right {
+    text-align: left;
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: $primary-color;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 8px;
+
+        a {
+          color: $subtext-color;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $secondary-color;
           }
         }
-  
-        textarea {
-          resize: none;
-          height: 100px;
-        }
-      }
-  
-      .full-width {
-        grid-column: span 2;
-      }
-  
-      .submit-btn {
-        grid-column: span 2;
-        padding: 12px;
-        background: linear-gradient(90deg, #a67cdb, #6148b6);
-        border: none;
-        color: #fff;
-        font-weight: bold;
-        font-size: 1rem;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.2s ease;
-  
-        &:hover {
-          background: linear-gradient(90deg, #6148b6, #a67cdb);
-          transform: scale(1.02);
-        }
       }
     }
   }
-  
-  /* 📱 Responsive Design */
-  @media (max-width: 1024px) {
-    .contact-section .container {
-      flex-direction: column;
-    }
-  
-    .contact-form form {
-      grid-template-columns: 1fr;
-    }
-  
-    .full-width {
-      grid-column: span 1;
-    }
-  }
-  /* 🌟 Contact Page - Statistics & Highlights */
-.contact-highlights {
-    background: #0d0d0d;
-    padding: 60px 20px;
+
+  .footer-bottom {
     text-align: center;
-    color: #fff;
-  
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-  
-    .intro-text {
-      font-size: 1.2rem;
-      color: #bbb;
-      margin-bottom: 40px;
-    }
-  
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-  
-      .highlight-card {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 30px;
-        border-radius: 12px;
-        text-align: center;
-        transition: transform 0.3s ease, background 0.3s ease;
-  
-        &:hover {
-          transform: scale(1.05);
-          background: rgba(255, 255, 255, 0.1);
-        }
-  
-        h2 {
-          font-size: 2rem;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-  
-        p {
-          font-size: 1rem;
-          color: #bbb;
-        }
-  
-        img {
-          width: 50px;
-          margin-bottom: 10px;
-        }
-      }
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    p {
+      font-size: 1rem;
+      color: $subtext-color;
     }
   }
-  
-  /* 📱 Responsive Design */
-  @media (max-width: 1024px) {
-    .highlights-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .highlights-grid {
-      grid-template-columns: 1fr;
-    }
-  }
- 
- // 🌟 Footer Styling
-.footer {
-    background: #0d0d0d; // Dark background
-    padding: 60px 30px;
-    color: white;
-  
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-  
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-  
-    // 🔹 Left Section - Company Info
-    .footer-left {
-        max-width: 350px;
-  
-        h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-  
-        p {
-            font-size: 1.1rem;
-            color: #c0c0c0;
-            line-height: 1.6;
-        }
-  
-        h4 {
-            margin-top: 20px;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-    }
-  
-    // 🔹 Middle Section - Services & Solutions
-    .footer-middle {
-        text-align: left;
-  
-        h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #a67cdb; // Purple accent
-        }
-  
-        ul {
-            list-style: none;
-            padding: 0;
-  
-            li {
-                margin-bottom: 8px;
-  
-                a {
-                    color: #c0c0c0;
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-  
-                    &:hover {
-                        color: #ff9900;
-                    }
-                }
-            }
-        }
-    }
-  
-    // 🔹 Right Section - Company
-    .footer-right {
-        text-align: left;
-  
-        h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #a67cdb;
-        }
-  
-        ul {
-            list-style: none;
-            padding: 0;
-  
-            li {
-                margin-bottom: 8px;
-  
-                a {
-                    color: #c0c0c0;
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-  
-                    &:hover {
-                        color: #ff9900;
-                    }
-                }
-            }
-        }
-    }
-  
-    // 🌟 Bottom Copyright Section
-    .footer-bottom {
-        text-align: center;
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-  
-        p {
-            font-size: 1rem;
-            color: #c0c0c0;
-        }
-    }
-  }
-  
-  // 📱 Responsive Adjustments
-  @media (max-width: 900px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-  
-    .footer-middle,
-    .footer-right {
-        margin-top: 30px;
-    }
-  }
-  /* 🌍 Map Section - Centered Video */
-.map-section {
-  display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
-  height: 100vh; /* Full viewport height */
-  background-color: #0d0d0d; /* Dark background for contrast */
-  padding: 50px 0; /* Spacing above and below */
 }
 
-/* 🔹 Video Container */
-.map-container {
-  width: 80%; /* Adjust width as needed */
-  max-width: 900px; /* Prevents video from getting too large */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .contact-section .container {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    margin-left: 0;
+    max-width: 100%;
+    
+    form {
+      grid-template-areas:
+        "name1"
+        "name2"
+        "company"
+        "job"
+        "country"
+        "phone"
+        "email"
+        "service"
+        "help"
+        "submit";
+    }
+  }
+
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-middle, .footer-right {
+    margin-top: 30px;
+    text-align: center;
+  }
 }
 
-/* 🎥 Video Styling */
-.map-video {
-  width: 100%;
-  height: auto;
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); /* Soft shadow */
-  object-fit: cover; /* Ensures proper aspect ratio */
-}
-
-/* 📱 Responsive Adjustments */
 @media (max-width: 768px) {
+  .contact-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px !important;
+  }
+
   .map-container {
     width: 90%;
   }
 }
-/* 🌟 Dropdown Styling */
+/* Contact Form - Final Fix */
+.contact-form {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  box-sizing: border-box;
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* Force full-width elements to behave */
+  .form-group.full-width {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    
+    select, textarea {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  /* Universal field containment */
+  .form-group {
+    width: 100%;
+    min-width: 0;
+    
+    input, select, textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .contact-form {
+    margin-left: 0;
+    
+    form {
+      grid-template-columns: 1fr;
+    }
+    
+    .form-group.full-width {
+      grid-column: 1 !important;
+    }
+  }
+}
+/* Dropdown Text Visibility Fix */
 select {
-  appearance: none;
-  background: rgba(255, 255, 255, 0.1); /* Keeps background slightly visible */
-  color: #fff; /* Ensures the text is visible */
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  color: $text-color !important; /* Force white text */
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  option {
+    color: $text-color; /* Text color for options */
+    background-color: $background-dark; /* Dark background for options */
+    padding: 10px; /* Spacing for options */
+  }
 }
 
-/* 🌟 Ensure the dropdown options are visible */
-select option {
-  background: #0d0d0d; /* Dark background for dropdown options */
-  color: #fff; /* White text for readability */
-  font-weight: 500;
-  padding: 10px;
-}
-
-/* 🌟 Fix Dropdown Arrow */
+/* Dropdown Arrow Fix */
 select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 15px center !important;
+  background-size: 12px !important;
+  padding-right: 35px !important;
+}
+
+.map-section {
+  padding: 30px 20px !important;
   
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 14px;
+  .map-video {
+    height: 300px !important;
+  }
 }
-
-/* 🌟 Hover Effect */
-select:hover {
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.15);
-}
-.success-message {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.error-message {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.submit-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-
-
-  

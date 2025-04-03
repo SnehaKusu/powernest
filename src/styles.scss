@@ -105,3 +105,20 @@ img, video, iframe {
 /* ================ 🛠️ UTILITY CLASSES ================ */
 .text-center { text-align: center; }
 .no-scroll { overflow: hidden; }
+
+/* Mobile-first base styles */
+html {
+  font-size: 14px; // Smaller base for mobile
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden; // Prevents horizontal scroll
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box; // Prevents padding from breaking layouts
+}

@@ -178,4 +178,61 @@
       }
     }
   }
+  /* 🌟 Talent Hero Section - Mobile Centering */
+.talent-hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.talent-hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Center all text elements */
+.talent-hero h2,
+.talent-hero .subheading {
+  text-align: center;
+  width: 100%;
+}
+
+/* Center the CTA button */
+.talent-hero .cta-button {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Break line in h2 for better mobile display */
+.talent-hero h2 br {
+  display: block;
+}
+
+/* Desktop styles (revert to original alignment) */
+@media (min-width: 768px) {
+  .talent-hero {
+      text-align: left;
+  }
+  
+  .talent-hero .hero-content {
+      align-items: flex-start;
+  }
+  
+  .talent-hero h2,
+  .talent-hero .subheading {
+      text-align: left;
+  }
+  
+  .talent-hero .cta-button {
+      margin: 0;
+      display: inline-block;
+  }
+  
+  /* Optional: Adjust line breaks for desktop */
+  .talent-hero h2 br {
+      display: inline;
+  }
+}
   

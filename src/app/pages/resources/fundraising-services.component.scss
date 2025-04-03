@@ -151,4 +151,60 @@
       }
     }
   }
+  /* 🌟 Fundraising Hero Section - Mobile Centering */
+.fundraising-hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.fundraising-hero .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Center all text elements */
+.fundraising-hero h1,
+.fundraising-hero .subheading {
+  text-align: center;
+  width: 100%;
+}
+
+/* Center the CTA button */
+.fundraising-hero .cta-button {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Break line in h1 for better mobile display */
+.fundraising-hero h1 br {
+  display: block;
+}
+
+/* Desktop styles (revert to original alignment) */
+@media (min-width: 768px) {
+  .fundraising-hero {
+      text-align: left;
+  }
   
+  .fundraising-hero .content {
+      align-items: flex-start;
+  }
+  
+  .fundraising-hero h1,
+  .fundraising-hero .subheading {
+      text-align: left;
+  }
+  
+  .fundraising-hero .cta-button {
+      margin: 0;
+      display: inline-block;
+  }
+  
+  /* Optional: Adjust line breaks for desktop */
+  .fundraising-hero h1 br {
+      display: inline;
+  }
+}

@@ -258,132 +258,62 @@
       }
   }
 }
-// 🌟 Footer Styling
-.footer {
-  background: #0d0d0d; // Dark background
-  padding: 60px 30px;
-  color: white;
-
-  .container {
-      max-width: 1200px;
-      margin: 0 auto;
-  }
-
-  .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-  }
-
-  // 🔹 Left Section - Company Info
-  .footer-left {
-      max-width: 350px;
-
-      h3 {
-          font-size: 1.8rem;
-          font-weight: 700;
-          margin-bottom: 10px;
-      }
-
-      p {
-          font-size: 1.1rem;
-          color: #c0c0c0;
-          line-height: 1.6;
-      }
-
-      h4 {
-          margin-top: 20px;
-          font-size: 1.3rem;
-          font-weight: bold;
-      }
-  }
-
-  // 🔹 Middle Section - Services & Solutions
-  .footer-middle {
-      text-align: left;
-
-      h4 {
-          font-size: 1.2rem;
-          font-weight: 600;
-          margin-bottom: 10px;
-          color: #a67cdb; // Purple accent
-      }
-
-      ul {
-          list-style: none;
-          padding: 0;
-
-          li {
-              margin-bottom: 8px;
-
-              a {
-                  color: #c0c0c0;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-
-                  &:hover {
-                      color: #ff9900;
-                  }
-              }
-          }
-      }
-  }
-
-  // 🔹 Right Section - Company
-  .footer-right {
-      text-align: left;
-
-      h4 {
-          font-size: 1.2rem;
-          font-weight: 600;
-          margin-bottom: 10px;
-          color: #a67cdb;
-      }
-
-      ul {
-          list-style: none;
-          padding: 0;
-
-          li {
-              margin-bottom: 8px;
-
-              a {
-                  color: #c0c0c0;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-
-                  &:hover {
-                      color: #ff9900;
-                  }
-              }
-          }
-      }
-  }
-
-  // 🌟 Bottom Copyright Section
-  .footer-bottom {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-      p {
-          font-size: 1rem;
-          color: #c0c0c0;
-      }
-  }
+/* 🌟 Hero Section - Mobile Centering */
+.psychological-services-hero {
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
-// 📱 Responsive Adjustments
-@media (max-width: 900px) {
-  .footer-content {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
+.psychological-services-hero .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
 
-  .footer-middle,
-  .footer-right {
-      margin-top: 30px;
+/* Center all text elements */
+.psychological-services-hero h1,
+.psychological-services-hero .subheading,
+.psychological-services-hero .description {
+  text-align: center;
+  width: 100%;
+}
+
+/* Center the CTA button */
+.psychological-services-hero .cta-button {
+  margin: 0 auto;
+  display: block; /* Ensures proper button centering */
+}
+
+/* Break line in h1 for better mobile display */
+.psychological-services-hero h1 br {
+  display: block;
+}
+
+/* Desktop styles (revert to original alignment) */
+@media (min-width: 768px) {
+  .psychological-services-hero {
+      text-align: left;
+  }
+  
+  .psychological-services-hero .content {
+      align-items: flex-start;
+  }
+  
+  .psychological-services-hero h1,
+  .psychological-services-hero .subheading,
+  .psychological-services-hero .description {
+      text-align: left;
+  }
+  
+  .psychological-services-hero .cta-button {
+      margin: 0;
+      display: inline-block; /* Revert to original button display */
+  }
+  
+  /* Optional: Adjust line breaks for desktop */
+  .psychological-services-hero h1 br {
+      display: inline;
   }
 }

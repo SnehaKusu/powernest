@@ -678,146 +678,7 @@ body {
     }
   }
 }
-// 📌 Footer Section Styling
-.footer {
-  background-color: #0d0d0d;
-  padding: 60px 30px;
-  color: white;
 
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
-
-  // Left Section (Company Info)
-  .footer-left {
-    max-width: 350px;
-    
-    h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #c0c0c0;
-      line-height: 1.6;
-    }
-
-    .footer-contact {
-      margin-top: 20px;
-
-      h3 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
-
-      a {
-        color: #a67cdb;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #ff9900;
-        }
-      }
-    }
-  }
-
-  // Middle Section (Services & Solutions)
-  .footer-middle {
-    text-align: left;
-    
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #a67cdb;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        margin-bottom: 8px;
-
-        a {
-          color: #c0c0c0;
-          text-decoration: none;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: #ff9900;
-          }
-        }
-      }
-    }
-  }
-
-  // Right Section (Company)
-  .footer-right {
-    text-align: left;
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #a67cdb;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        margin-bottom: 8px;
-
-        a {
-          color: #c0c0c0;
-          text-decoration: none;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: #ff9900;
-          }
-        }
-      }
-    }
-  }
-
-  // Bottom Copyright Section
-  .footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-    p {
-      font-size: 1rem;
-      color: #c0c0c0;
-    }
-  }
-}
-
-// 📱 Responsive Adjustments
-@media (max-width: 900px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-middle,
-  .footer-right {
-    margin-top: 30px;
-  }
-}
 /* 🌍 Map Section - Centered Video */
 .map-section {
   display: flex;
@@ -851,6 +712,210 @@ body {
 @media (max-width: 768px) {
   .map-container {
     width: 90%;
+  }
+}
+/* ====================== */
+/* MOBILE HOME OVERRIDES */
+/* ====================== */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 80px !important; /* Account for fixed navbar */
+    min-height: auto !important;
+
+    .hero-content {
+      flex-direction: column;
+      
+      .hero-text {
+        width: 100% !important;
+        padding-right: 0 !important;
+      }
+
+      .hero-image {
+        width: 100% !important;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .cta-section {
+    .cta-container {
+      flex-direction: column;
+      text-align: center;
+      
+      .cta-text {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+/* ====================== */
+/* MOBILE RESPONSIVE FIXES */
+/* ====================== */
+
+@media (max-width: 768px) {
+  /* Hero Section Fixes */
+  .home-hero {
+    padding: 30px 20px !important;
+    text-align: center;
+    
+    h1 {
+      font-size: 1.8rem !important;
+      line-height: 1.3 !important;
+      
+      br, .highlight {
+        display: inline !important;
+      }
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      gap: 15px;
+      
+      a {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        text-align: center;
+      }
+    }
+  }
+
+  /* Stats Grid Fixes */
+  .home-stats {
+    padding: 30px 20px !important;
+    
+    .stats-grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+      
+      .stat-card {
+        padding: 20px !important;
+        text-align: center;
+        
+        img {
+          max-width: 60px !important;
+          margin: 0 auto 10px !important;
+        }
+      }
+    }
+  }
+
+  /* Business Insights Fixes */
+  .business-insights {
+    padding: 30px 20px !important;
+    
+    h2 {
+      font-size: 1.5rem !important;
+      line-height: 1.3 !important;
+      text-align: center;
+      
+      br, span {
+        display: inline !important;
+      }
+    }
+    
+    .insight-cards {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+      
+      .card {
+        padding: 25px !important;
+        text-align: center;
+        
+        img {
+          max-width: 60px !important;
+          margin: 0 auto 15px !important;
+        }
+      }
+    }
+  }
+
+  /* Careers Section Fixes */
+  .careers-section {
+    flex-direction: column !important;
+    padding: 30px 20px !important;
+    
+    .careers-content {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .careers-images {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+      
+      .image-card {
+        &.large, &.medium, &.small {
+          width: 100% !important;
+          height: auto !important;
+        }
+      }
+    }
+  }
+
+  /* Why Choose Us Fixes */
+  .why-choose-us {
+    padding: 30px 20px !important;
+    
+    h2 {
+      font-size: 1.5rem !important;
+      line-height: 1.3 !important;
+      text-align: center;
+    }
+    
+    .why-cards {
+      grid-template-columns: 1fr !important;
+      
+      .why-card {
+        padding: 20px !important;
+      }
+    }
+  }
+
+  /* Map Section Fixes */
+  .map-section {
+    padding: 30px 20px !important;
+    
+    .map-video {
+      height: 300px !important;
+    }
+  }
+
+  /* CTA Section Fixes */
+  .cta-section {
+    flex-direction: column !important;
+    padding: 30px 20px !important;
+    text-align: center;
+    
+    .cta-button {
+      margin-top: 20px !important;
+      width: 60px !important;
+      height: 60px !important;
+    }
+  }
+}
+
+/* Additional Mobile-Specific Tweaks */
+@media (max-width: 480px) {
+  /* Make sure all text is readable */
+  body {
+    font-size: 16px !important;
+  }
+  
+  /* Ensure all buttons are tappable */
+  button, a {
+    min-height: 48px !important;
+    min-width: 120px !important;
+  }
+  
+  /* Fix any remaining image issues */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
 

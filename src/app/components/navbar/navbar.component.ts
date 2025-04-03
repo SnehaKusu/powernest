@@ -1,4 +1,4 @@
-import { Component, HostListener, inject, ChangeDetectorRef } from '@angular/core';
+import { Component, HostListener, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 
@@ -9,54 +9,77 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   activeDropdown: string | null = null;
+  isMobileMenuOpen = false;
   private router = inject(Router);
-  private cdr = inject(ChangeDetectorRef); // Inject ChangeDetectorRef
+  private cdr = inject(ChangeDetectorRef);
 
-  // 🔹 Function to Toggle Dropdowns
-  toggleDropdown(menu: string, event: Event) {
-    event.stopPropagation();
-    console.log("Dropdown Clicked:", menu);
-    console.log("Active Dropdown Before:", this.activeDropdown);
-
-    this.activeDropdown = this.activeDropdown === menu ? null : menu;
-
-    console.log("Active Dropdown After:", this.activeDropdown);
-    this.cdr.detectChanges(); // ✅ Ensure UI updates
+  ngOnInit() {
+    this.checkScreenSize();
   }
 
-  // 🔹 Function to Navigate & Close Dropdown
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    if (window.innerWidth > 768 && this.isMobileMenuOpen) {
+      this.isMobileMenuOpen = false;
+      this.cdr.detectChanges();
+    }
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    this.cdr.detectChanges();
+    if (!this.isMobileMenuOpen) {
+      this.activeDropdown = null;
+    }
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+    this.activeDropdown = null;
+  }
+
+  toggleDropdown(menu: string, event: Event) {
+    event.stopPropagation();
+    
+    if (window.innerWidth <= 768) {
+      // On mobile, toggle dropdown like an accordion
+      this.activeDropdown = this.activeDropdown === menu ? null : menu;
+    } else {
+      // On desktop, show dropdown on hover/click
+      this.activeDropdown = menu;
+    }
+    
+    this.cdr.detectChanges();
+  }
+
   navigateTo(route: string, event: Event) {
     event.preventDefault();
     event.stopPropagation();
-
-    console.log("🔹 Attempting to Navigate to:", route);
-
+    
     this.router.navigateByUrl(route).then(success => {
       if (success) {
-        console.log("✅ Navigation successful:", route);
-        this.activeDropdown = null; // ✅ Close dropdown
-        this.cdr.detectChanges(); // ✅ Ensure UI updates
-      } else {
-        console.error("❌ Navigation failed:", route);
+        this.activeDropdown = null;
+        this.isMobileMenuOpen = false;
+        this.cdr.detectChanges();
       }
-    }).catch(err => console.error("❌ Navigation Error:", err));
+    });
   }
 
-  // 🔹 Auto Close Dropdown on Click Outside
   @HostListener('document:click', ['$event'])
-closeDropdown(event: Event) {
-  const target = event.target as HTMLElement;
-  console.log("Clicked Element:", target);
-
-  if (
-    !target.closest('.dropdown-container') &&
-    !target.closest('.dropdown-menu')
-  ) {
-    console.log("Dropdown Closed");
-    this.activeDropdown = null;
-    this.cdr.detectChanges();
+  closeDropdown(event: Event) {
+    const target = event.target as HTMLElement;
+    
+    if (window.innerWidth > 768) {
+      if (!target.closest('.dropdown-container') && !target.closest('.dropdown-menu')) {
+        this.activeDropdown = null;
+        this.cdr.detectChanges();
+      }
+    }
   }
-}
 }
