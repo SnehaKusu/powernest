@@ -235,4 +235,168 @@
       display: inline;
   }
 }
+/* 🌟 Talent Optimization Services Section - Simplified */
+.talent-services {
+  padding: 40px 20px;
+  background: #0d0d0d; /* Dark background */
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .subtext {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #c0c0c0; /* Grey subtext */
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .talent-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .talent-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      background: rgba(255, 255, 255, 0.07); /* Semi-transparent white */
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 153, 0, 0.3); /* Orange shadow */
+      }
+
+      &.reverse {
+        flex-direction: column-reverse;
+      }
+
+      .icon-box {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: contain;
+        }
+      }
+
+      .content-box {
+        flex: 1;
+        width: 100%;
+
+        h3 {
+          font-size: 1.3rem;
+          color: white;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+
+        ul {
+          padding-left: 20px;
+
+          li {
+            color: #c0c0c0; /* Grey text */
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            position: relative;
+
+            &::before {
+              content: "•";
+              color: #a67cdb; /* Purple bullet */
+              position: absolute;
+              left: -15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Tablet Styles */
+  @media (min-width: 768px) {
+    padding: 60px 30px;
+
+    .talent-grid {
+      gap: 50px;
+
+      .talent-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 40px;
+        gap: 40px;
+
+        &.reverse {
+          flex-direction: row-reverse;
+        }
+
+        .icon-box {
+          max-width: 250px;
+
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        .content-box {
+          h3 {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  /* Desktop Styles */
+  @media (min-width: 1024px) {
+    padding: 80px 40px;
+
+    .talent-grid {
+      .talent-item {
+        padding: 50px;
+        gap: 50px;
+
+        .icon-box {
+          max-width: 300px;
+
+          img {
+            width: 120px;
+            height: 120px;
+          }
+        }
+
+        .content-box {
+          h3 {
+            font-size: 1.5rem;
+          }
+
+          ul li {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
   

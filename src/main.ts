@@ -26,7 +26,7 @@ const routes: Routes = [
     children: [
       { path: 'business-development', component: BusinessDevelopmentComponent },
       { 
-        path: 'core-hr', 
+        path: 'core-hr-solutions', 
         loadComponent: () => import('./app/pages/solutions/core-hr-solutions/core-hr-solutions.component')
           .then(m => m.CoreHrSolutionsComponent) 
       }

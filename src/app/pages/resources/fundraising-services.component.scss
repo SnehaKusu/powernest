@@ -208,3 +208,120 @@
       display: inline;
   }
 }
+/* 🌟 Fundraising Services Section - Mobile Centering */
+.fundraising-services {
+  padding: 40px 20px;
+  
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    
+    margin-bottom: 20px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.1rem;
+    
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the cards on mobile */
+    gap: 30px;
+
+    .service-card {
+      width: 100%;
+      max-width: 400px; /* Controls card width on mobile */
+     
+      border-radius: 15px;
+      padding: 25px;
+     
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+        display: block; /* Ensures icon centering */
+      }
+
+      .service-info {
+        h3 {
+          font-size: 1.3rem;
+          
+          margin-bottom: 15px;
+          text-align: center;
+        }
+
+        ul {
+          padding-left: 20px;
+
+          li {
+           
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            position: relative;
+
+            &::before {
+              content: "•";
+              
+              position: absolute;
+              left: -15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Tablet Styles */
+  @media (min-width: 768px) {
+    padding: 60px 30px;
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: stretch; /* Reset alignment for grid */
+      justify-content: center;
+      gap: 30px;
+
+      .service-card {
+        max-width: 100%; /* Allow cards to fill grid cells */
+      }
+    }
+  }
+
+  /* Desktop Styles */
+  @media (min-width: 1024px) {
+    padding: 80px 40px;
+
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Large Desktop - 4 columns */
+  @media (min-width: 1200px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

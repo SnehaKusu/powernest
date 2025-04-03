@@ -122,3 +122,8 @@ body {
 * {
   box-sizing: border-box; // Prevents padding from breaking layouts
 }
+/* In your global styles.css */
+a {
+  text-decoration: none;
+}
+

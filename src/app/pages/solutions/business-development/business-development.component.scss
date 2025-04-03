@@ -532,3 +532,93 @@ $subtext-color: #c0c0c0; // Grey Subtext
     padding: 50px 20px !important;
   }
 }
+/* Business Development Hero Section */
+.business-development-hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: #0d0d0d;
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .subheading {
+      color: #a67cdb; /* Purple accent */
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: 20px;
+
+      span {
+        color: #a67cdb; /* Purple accent */
+      }
+    }
+
+    .description {
+      color: #c0c0c0; /* Grey subtext */
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #a67cdb; /* Purple */
+      color: white;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none; /* Removes underline */
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: #8e5cc9; /* Darker purple */
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(166, 124, 219, 0.4);
+      }
+    }
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .business-development-hero {
+    padding: 40px 15px;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+
+    .cta-button {
+      padding: 10px 25px;
+      font-size: 0.95rem;
+      width: 80%;
+      max-width: 250px;
+      margin: 0 auto;
+      display: block; /* Ensures button takes full width on mobile */
+    }
+  }
+}
+
+/* For the transform-business section CTA button */
+.transform-business {
+  .cta-button {
+    text-decoration: none !important; /* Ensures no underline */
+  }
+}

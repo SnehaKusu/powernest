@@ -1,3 +1,6 @@
+
+//home page full styling page 
+
 // Import Google Fonts (Poppins for a modern, sleek look)
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -1099,5 +1102,30 @@ body {
         }
       }
     }
+  }
+}
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers horizontally */
+  justify-content: center; /* This centers vertically if needed */
+  text-align: center; /* Centers the text */
+  padding: 20px;
+  border: 1px solid $card-border; /* Using your existing variable */
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  img {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    margin-bottom: 15px; /* Space between icon and text */
+    display: block; /* Ensures proper centering */
+  }
+
+  p {
+    margin: 0; /* Removes default paragraph margins */
+    font-size: 1rem;
+    color: $text-color; /* Using your existing variable */
+    max-width: 200px; /* Prevents text from stretching too wide */
   }
 }
