@@ -138,3 +138,74 @@
     margin-top: 30px;
   }
 }
+/* Footer - Mobile Optimized */
+.footer {
+  background-color: #0d0d0d;
+  color: white;
+  padding: 40px 20px 60px; /* Increased bottom padding */
+  font-family: 'Poppins', sans-serif;
+  position: relative; /* For copyright positioning */
+  min-height: 100vh; /* Temporary for debugging - remove after testing */
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px; /* Space for copyright */
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 25px;
+      padding-bottom: 60px; /* More space on mobile */
+    }
+  }
+
+  /* Copyright Fix - Mobile Specific */
+  .footer-bottom {
+    text-align: center;
+    width: 100%;
+    padding: 20px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    position: absolute; /* Changed to absolute */
+    bottom: 0; /* Stick to bottom */
+    left: 0;
+    background-color: #0d0d0d; /* Match footer background */
+    z-index: 10; /* Ensure visibility */
+
+    @media (max-width: 768px) {
+      padding: 15px 0;
+      position: fixed; /* Stays visible when scrolling */
+    }
+  }
+
+  /* Content Sections */
+  .footer-left, 
+  .footer-middle, 
+  .footer-right {
+    flex: 1;
+    min-width: 200px;
+    padding-bottom: 20px; /* Space before copyright */
+
+    @media (max-width: 768px) {
+      flex: 100%;
+      padding: 0 10px 15px;
+    }
+  }
+
+  /* Additional Mobile Optimizations */
+  @media (max-width: 480px) {
+    padding: 30px 15px 70px; /* More bottom space */
+
+    .footer-container {
+      padding-bottom: 80px;
+    }
+
+    .footer-bottom {
+      font-size: 0.8rem;
+      padding: 12px 0;
+    }
+  }
+}
