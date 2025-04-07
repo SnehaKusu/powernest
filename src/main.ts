@@ -15,6 +15,7 @@ import { ContactComponent } from './app/pages/contact/contact.component';
 import { BusinessDevelopmentComponent } from './app/pages/solutions/business-development/business-development.component';
 import { FundraisingServicesComponent } from './app/pages/resources/fundraising-services.component';
 import { TalentOptimizationServicesComponent } from './app/pages/resources/talent-optimization-services.component';
+import { PartnershipsComponent } from './app/partnerships/partnerships.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },  
@@ -55,6 +56,8 @@ const routes: Routes = [
 
   { path: 'resources/fundraising-services', component: FundraisingServicesComponent },
   { path: 'resources/talent-optimization-services', component: TalentOptimizationServicesComponent },
+
+  { path: 'partnerships', component: PartnershipsComponent }
 ];
 
 bootstrapApplication(AppComponent, {

@@ -54,15 +54,14 @@
             [class.active]="activeDropdown === 'resources'"
             (click)="toggleDropdown('resources', $event)">
           <a href="javascript:void(0)">
-            Resources
+            Community & Partnerships
             <span class="dropdown-arrow">⌄</span>
           </a>
           <div class="dropdown-menu">
             <ul>
               <li (click)="navigateTo('/resources/fundraising-services', $event)">Fundraising Services</li>
               <li (click)="navigateTo('/resources/talent-optimization-services', $event)">Talent Optimization Services</li>
-              <li (click)="navigateTo('/newsletter', $event)">Newsletter</li>
-              <li (click)="navigateTo('/support', $event)">Support</li>
+              <li><a routerLink="/partnerships" (click)="closeMobileMenu()">Partnerships</a></li>
             </ul>
           </div>
         </li>
@@ -78,7 +77,6 @@
           <div class="dropdown-menu">
             <ul>
               <li (click)="navigateTo('/about-us', $event)">About Us</li>
-              <li (click)="navigateTo('/careers', $event)">Careers</li>
             </ul>
           </div>
         </li>

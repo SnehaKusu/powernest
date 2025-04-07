@@ -1,48 +1,101 @@
-<!-- Footer Section -->
 <footer class="footer">
-    <div class="footer-container">
+  <div class="footer-container">
+    <!-- Contact Action Boxes Row -->
+    <div class="contact-actions-row">
+      <!-- Email Box -->
+      <div class="contact-box email-box">
+        <i class="fas fa-envelope contact-icon"></i>
+        <h3 class="contact-title">Get In Touch</h3>
+        <a href="mailto:hr@powernestglobal.com" class="contact-link">hr&#64;powernestglobal.com</a>
+      </div>
+      
+      <!-- Schedule Call Box -->
+      <a routerLink="/contact" class="contact-box call-box">
+        <i class="fas fa-phone-alt contact-icon"></i>
+        <h3 class="contact-title">Book a Call</h3>
+        <p class="contact-text">Schedule a consultation</p>
+      </a>
+      
+      <!-- Contact Us Box -->
+      <a routerLink="/contact" class="contact-box message-box">
+        <i class="fas fa-comment-dots contact-icon"></i>
+        <h3 class="contact-title">Contact Us</h3>
+        <p class="contact-text">Send us a message</p>
+      </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="footer-content">
       <!-- Left Section: Company Info -->
       <div class="footer-left">
-        <h2>Powernest Talent</h2>
-        <p>Transform your organization through psychology-driven talent solutions.</p>
+        <h2 class="footer-logo">Powernest <span>Talent</span></h2>
+        <p class="tagline">Transform your organization through psychology-driven talent solutions.</p>
   
         <div class="footer-contact">
-          <h3>Contact</h3>
-          <p>Ready to transform your organization or career? Contact us for a consultation.</p>
-          <p><a href="mailto:hr@powernestglobal.com">hr&#64;powernestglobal.com</a></p>
-          <p><a href="mailto:pn@powernestglobal.com">pn&#64;powernestglobal.com</a></p>
-          <p><a href="mailto:hr@powernesttalent.com">hr&#64;powernesttalent.com</a></p>
+          <h3>Direct Contacts</h3>
+          <div class="email-contacts">
+            <a href="mailto:hr@powernestglobal.com" class="email-link">
+              <i class="fas fa-envelope"></i> hr&#64;powernestglobal.com
+            </a>
+            <a href="mailto:pn@powernesttalent.com" class="email-link">
+              <i class="fas fa-envelope"></i> pn&#64;powernesttalent.com
+            </a>
+            <a href="mailto:hr@powernesttalent.com" class="email-link">
+              <i class="fas fa-envelope"></i> hr&#64;powernesttalent.com
+            </a>
+          </div>
         </div>
       </div>
   
       <!-- Middle Section: Services & Solutions -->
       <div class="footer-middle">
-        <h3>Services</h3>
-        <ul>
-          <li><a routerLink="/services/comprehensive-services">Comprehensive Services</a></li>
-          <li><a routerLink="/services/strategic-advisory">Strategic Advisory Services</a></li>
-          <li><a routerLink="/services/psychological-services">Psychological Services</a></li>
-        </ul>
+        <div class="services-section">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a routerLink="/services/comprehensive-services">Comprehensive Services</a></li>
+            <li><a routerLink="/services/strategic-advisory">Strategic Advisory Services</a></li>
+            <li><a routerLink="/services/psychological-services">Psychological Services</a></li>
+          </ul>
+        </div>
   
-        <h3>Solutions</h3>
-        <ul>
-          <li><a routerLink="/solutions/business-development">Business Development Solutions</a></li>
-          <li><a routerLink="/solutions/core-hr-solutions">Core HR Solutions</a></li>
-        </ul>
+        <div class="solutions-section">
+          <h3>Solutions</h3>
+          <ul class="footer-links">
+            <li><a routerLink="/solutions/business-development">Business Development Solutions</a></li>
+            <li><a routerLink="/solutions/core-hr-solutions">Core HR Solutions</a></li>
+          </ul>
+        </div>
       </div>
   
       <!-- Right Section: Company -->
       <div class="footer-right">
         <h3>Company</h3>
-        <ul>
+        <ul class="footer-links">
           <li><a routerLink="/about-us">About Us</a></li>
-          <li><a routerLink="/home">Careers</a></li>
+          <li><a routerLink="/careers">Careers</a></li>
+          <li><a routerLink="/blog">Blog</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
         </ul>
+        
+        <div class="social-links">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/company/power-nest-global/posts/?feedView=all" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   
     <!-- Copyright -->
     <div class="footer-bottom">
-      <p>Copyright © 2025 All Rights Reserved</p>
+      <p>Copyright © 2025 Powernest Talent. All Rights Reserved.</p>
+      <div class="legal-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/cookies">Cookie Policy</a>
+      </div>
     </div>
-  </footer>
+  </div>
+</footer>

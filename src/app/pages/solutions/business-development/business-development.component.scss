@@ -622,3 +622,103 @@ $subtext-color: #c0c0c0; // Grey Subtext
     text-decoration: none !important; /* Ensures no underline */
   }
 }
+// 🌟 Business Development Hero Section - Left Aligned (Fixed)
+.business-development-hero {
+  background: radial-gradient(circle at top right, rgba($primary-color, 0.3), $background-dark);
+  color: $text-color;
+  padding: 100px 60px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; // This ensures left alignment
+
+  .content {
+    max-width: 600px;
+    text-align: left;
+    margin-left: 10%; // Adds consistent left margin
+    margin-right: auto; // Pushes content to left
+
+    .subheading {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $primary-color;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 15px;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    .description {
+      font-size: 1.2rem;
+      color: $subtext-color;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      padding: 14px 30px;
+      background: transparent;
+      border: 2px solid $primary-color;
+      color: $text-color;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+
+      &:hover {
+        background: $primary-color;
+        color: $background-dark;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba($primary-color, 0.3);
+      }
+    }
+  }
+}
+
+// 📱 Mobile Responsiveness
+@media (max-width: 768px) {
+  .business-development-hero {
+    padding: 60px 20px;
+    min-height: auto;
+    text-align: center;
+    justify-content: center; // Center on mobile
+
+    .content {
+      max-width: 100%;
+      text-align: center;
+      margin-left: auto; // Reset left margin on mobile
+      margin-right: auto; // Center on mobile
+
+      h1 {
+        font-size: 2rem;
+        
+        br {
+          display: none;
+        }
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}
