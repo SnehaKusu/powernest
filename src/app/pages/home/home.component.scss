@@ -3,6 +3,17 @@
 
 // Import Google Fonts (Poppins for a modern, sleek look)
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+// 🌌 Cosmic Backgrounds
+$starfield: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 800 800"><g fill="%23fff"><circle cx="400" cy="400" r="1" opacity=".8"/><circle cx="200" cy="150" r="1.5" opacity=".5"/><circle cx="600" cy="650" r="1" opacity=".3"/><circle cx="700" cy="300" r="1.2" opacity=".6"/><circle cx="300" cy="700" r="1.3" opacity=".4"/><circle cx="150" cy="450" r="1.1" opacity=".7"/><circle cx="750" cy="550" r="1.4" opacity=".5"/></g></svg>');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+// 🎨 Cosmic Color Palette
+$primary: #a67cdb;       // Hero purple
+$secondary: #ff9900;     // Power gold
+$dark: #0a0a12;          // Deep space
+$text: #ffffff;          // Pure white
+$subtext: rgba(255,255,255,0.7);
+$energy-blue: #00f2ff;   // Superman energy
+$energy-red: #ff2d2d;    // Flash speed lines
 
 // 🎨 Global Color Palette
 $primary-color: #a67cdb;   // Purple Accent
@@ -430,68 +441,7 @@ body {
 }
 
 
-// 🌍 Why Choose Us Section with Enhanced Depth
-.why-choose-us {
-  text-align: center;
-  padding: 100px 20px;
-  background-color: $background-dark;
-  color: $text-color;
 
-  h6 {
-    font-size: 1rem;
-    font-weight: 400;
-    color: $primary-color;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  h2 {
-    font-size: 2.7rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
-
-  p {
-    font-size: 1.2rem;
-    max-width: 750px;
-    margin: 0 auto 40px;
-    font-weight: 300;
-    color: $subtext-color;
-  }
-
-  .why-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .why-card {
-    background: $card-background;
-    padding: 35px;
-    border-radius: 14px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid $card-border;
-
-    h3 {
-      font-size: 1.6rem;
-      color: $text-color;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1rem;
-      color: $subtext-color;
-    }
-
-    &:hover {
-      transform: scale(1.08);
-      box-shadow: 0px 8px 18px rgba($secondary-color, 0.4);
-    }
-  }
-}
 
 // 🌟 Animations
 @keyframes fadeIn {
@@ -709,6 +659,9 @@ body {
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); /* Soft shadow */
   object-fit: cover; /* Ensures proper aspect ratio */
+}
+.map-section .container {
+  text-align: center;
 }
 
 /* 📱 Responsive Adjustments */
@@ -990,6 +943,7 @@ body {
       
       h2 {
         font-size: 1.8rem !important;
+        text-align:center;
       }
       
       p {
@@ -1129,5 +1083,305 @@ body {
     max-width: 200px; /* Prevents text from stretching too wide */
   }
 }
+.home-hero {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInOnLoad 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInOnLoad {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== WHY CHOOSE US - COMIC BOOK PANELS ===== */
+.why-choose-us {
+  background: 
+    linear-gradient(45deg, rgba($dark, 0.9), rgba(#0a0a20, 0.95)),
+    $starfield;
+  position: relative;
+  text-align: center;
+  z-index: 4;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at 30% 70%,
+      rgba($secondary, 0.1) 0%,
+      transparent 50%
+    );
+    z-index: 0;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $primary;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+  
+    &::before,
+    &::after {
+      content: "✧";
+      color: $secondary;
+      font-size: 1.2rem;
+      animation: sparkle 2s infinite;
+      margin: 0 10px;
+    }
+  
+    &::before {
+      margin-right: 8px;
+    }
+  
+    &::after {
+      margin-left: 8px;
+    }
+  }
+  
+  
+
+  h2 {
+    font-size: 2.7rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, $text, $secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, $primary, $secondary);
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+    opacity: 0.9;
+    position: relative;
+    
+    &::before {
+      content: '"';
+      position: absolute;
+      left: -30px;
+      top: -20px;
+      font-size: 4rem;
+      color: rgba($primary, 0.3);
+      font-family: serif;
+      line-height: 0;
+    }
+  }
+
+  .why-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba($primary, 0.3);
+      border-radius: 20px;
+      padding: 40px 30px;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: linear-gradient(to bottom, $primary, $secondary);
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 50px rgba($primary, 0.3);
+        border-color: rgba($secondary, 0.5);
+        
+        &::before {
+          width: 10px;
+        }
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: $text;
+        position: relative;
+        padding-left: 20px;
+        
+        &::before {
+          content: "◆";
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: $secondary;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        color: $subtext;
+        margin: 0;
+        text-align: left;
+        opacity: 0.9;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 1000px;
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($primary, 0.3);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+    
+    &:nth-child(1) { animation-delay: 0s; }
+    &:nth-child(2) { animation-delay: 1s; }
+    &:nth-child(3) { animation-delay: 2s; }
+    &:nth-child(4) { animation-delay: 3s; }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        transparent 45%,
+        rgba($primary, 0.1) 50%,
+        transparent 55%
+      );
+      transform: rotate(30deg);
+      animation: holographic-shine 6s infinite linear;
+    }
+
+    &:hover {
+      transform: translateY(-10px) rotateY(10deg) scale(1.05);
+      box-shadow: 0 20px 50px rgba($primary, 0.3);
+      border-color: rgba($secondary, 0.5);
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 5px rgba($primary, 0.5));
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 15px 0;
+      background: linear-gradient(45deg, $text, $secondary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      color: $subtext;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+  }
+}
+.multi-link-button {
+  position: relative;
+  display: inline-block;
+
+  .careers-btn {
+    background-color: #5a0d78;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .dropdown-links {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 10;
+    padding: 10px;
+
+    a {
+      display: block;
+      padding: 8px 12px;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  &:hover .dropdown-links {
+    display: block;
+  }
+}
+
+
+
 
 

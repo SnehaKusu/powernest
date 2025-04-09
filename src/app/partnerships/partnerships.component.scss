@@ -13,7 +13,7 @@
 }
 
 .partnerships-content {
-  padding: 80px 20px;
+  padding: 25px 10px;
 
   .container {
     max-width: 1200px;
@@ -136,5 +136,161 @@
 
   .logo-grid {
     grid-template-columns: 1fr;
+  }
+}
+/* 🌟 CTA - Discuss with Our Team */
+.cta-section {
+  background-color: #f4a32a; /* 🔥 Warm Orange */
+  padding: 30px 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 80px auto;
+  color: #222; /* 🔥 Dark Contrast */
+}
+
+/* 🔹 Left Side - Text */
+.cta-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.cta-text p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #333;
+}
+
+/* 🔹 Right Side - CTA Button */
+.cta-button {
+  width: 60px;
+  height: 60px;
+  background-color: #5a0d78; /* 🔥 Deep Purple */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #470960; /* Darker Purple on Hover */
+  transform: scale(1.1);
+}
+
+.cta-button i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* 🔥 Responsive */
+@media (max-width: 768px) {
+  .cta-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 30px;
+  }
+
+  .cta-button {
+    margin-top: 15px;
+  }
+}
+// ------------------------------
+// 🌟 Enhanced Visual Effects
+// ------------------------------
+
+.partnerships-hero {
+  position: relative;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #f4a32a, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    opacity: 0.85;
+    margin-top: 10px;
+  }
+}
+
+.partnership-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #ffffff, #f4a32a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.logo-item {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: scale(1.03);
+  }
+
+  img {
+    filter: brightness(1) invert(1);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  span {
+    color: #ddd;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+}
+
+.logo-grid {
+  gap: 24px;
+
+  .logo-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+// 🎯 Subtle animation on scroll-in (optional if you use AOS or scroll-reveal)
+.partnership-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
