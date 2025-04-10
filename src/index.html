@@ -37,24 +37,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   </head>
   
-<script>
-  // Mobile menu toggle
-  document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-  });
-</script>
-
-<body class="mat-typography">
-  <app-root></app-root>
+  <body class="mat-typography">
+    <app-root></app-root>
   
-  <!-- Optional: Load scripts at bottom -->
-  <script>
-    // Load fonts after HTML renders
-    document.addEventListener('DOMContentLoaded', function() {
-      if ('fonts' in document) {
-        document.fonts.load('1rem "Poppins"');
-      }
-    });
-  </script>
-</body>
+    <!-- Safe place for DOM-interacting scripts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
+          document.querySelector('.nav-links')?.classList.toggle('active');
+        });
+  
+        if ('fonts' in document) {
+          document.fonts.load('1rem "Poppins"');
+        }
+      });
+    </script>
+  </body>
+  
 </html>
