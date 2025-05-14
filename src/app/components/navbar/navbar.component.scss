@@ -396,7 +396,7 @@
     margin-left: auto;
   }
 
-  /* Mobile menu state */
+  /* Mobile menu state - ADJUSTED SPACING HERE */
   .nav-links {
     position: fixed;
     top: 60px;
@@ -410,21 +410,21 @@
 
     &.active {
       max-height: calc(100vh - 60px);
-      padding: 1rem 0;
+      padding: 0.5rem 0; /* Reduced from 1rem */
     }
 
     ul {
       flex-direction: column;
-      gap: 0;
+      gap: 0.25rem; /* Added small gap between items */
 
       li {
         width: 100%;
         height: auto;
-        padding: 0.5rem 1rem;
+        padding: 0.25rem 1rem; /* Reduced from 0.5rem */
 
         a {
           justify-content: flex-start;
-          padding: 0.75rem 1rem !important;
+          padding: 0.5rem 1rem !important; /* Reduced from 0.75rem */
         }
       }
     }
@@ -625,7 +625,7 @@
 /* Mobile Dropdown Fix */
 @media (max-width: 768px) {
   .dropdown-menu {
-    position: absolute;
+    position:relative;
     left: 0;
     width: 100vw;
     overflow-x: auto;
@@ -649,5 +649,101 @@
   /* Hide scrollbar visually but keep functionality */
   .dropdown-menu::-webkit-scrollbar {
     display: none;
+  }
+}
+
+.dropdown-menu {
+  z-index: 1001;
+}
+/* Mobile Menu Adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    &.active {
+      padding: 0.25rem 0; /* Reduced top/bottom padding */
+    }
+
+    ul {
+      gap: 0.1rem; /* Minimal gap between items */
+      
+      li {
+        padding: 0.15rem 1rem; /* Tight vertical padding */
+        height: 48px; /* Fixed height for consistent centering */
+        display: flex;
+        align-items: center; /* Vertical centering */
+        
+        a {
+          padding: 0.5rem 1rem !important;
+          height: 100%;
+          display: flex;
+          align-items: center; /* Vertical centering */
+        }
+      }
+    }
+  }
+
+  /* Dropdown items in mobile */
+  .dropdown-menu ul li {
+    padding: 0.5rem 1.5rem !important;
+    height: 42px; /* Consistent height for dropdown items */
+    display: flex;
+    align-items: center;
+  }
+}
+/* Desktop Horizontal Dropdown Centering */
+@media (min-width: 993px) {
+  .dropdown-container {
+    position: relative;
+    
+    .dropdown-menu {
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      padding: 15px 20px;
+      white-space: nowrap;
+      
+      ul {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 20px;
+        
+        li {
+          display: inline-block;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+/* Desktop Horizontal Dropdown Centering Fix */
+@media (min-width: 993px) {
+  .dropdown-container {
+    position: relative;
+    
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      width: auto;
+      min-width: max-content;
+      padding: 15px 25px;
+      
+      ul {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 30px;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          white-space: nowrap;
+          display: inline-flex;
+          align-items: center;
+        }
+      }
+    }
   }
 }
